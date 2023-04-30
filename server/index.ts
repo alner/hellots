@@ -1,6 +1,6 @@
 import express, { Express, Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
-import type { About } from '../common/types';
+import type { About } from '@common/types';
 
 dotenv.config();
 const port = process.env.PORT ?? 3000;

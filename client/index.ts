@@ -1,11 +1,11 @@
 import fetch from 'cross-fetch';
 import dotenv from 'dotenv';
-import type { About } from '../common/types';
+import type { About } from '@common/types';
 
 dotenv.config();
 
 function hello(n: string): string {
-    return `Hello ${n}!`;
+    return `Hello from ${n}!`;
 }
 
 function api<T>(url: string): Promise<T> {
@@ -17,7 +17,7 @@ function api<T>(url: string): Promise<T> {
 
 async function main() {
     console.log(hello("world"));
-    const port = process.env.PORT ?? 4000;
+    const port = process.env.PORT ?? 3000;
     const data = await api<About>(`http://localhost:${port}/api/v1/about`);
     console.log(`${data.name} ${data.version}`);
 }
